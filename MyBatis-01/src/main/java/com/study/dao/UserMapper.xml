@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--写好mapper配置，使得其sqlSession可以直接调用getMapper方法，执行查询操作-->
+
+<!--namespace用于绑定一个对一个对应的Dao/Mapper接口-->
+<mapper namespace="com.study.dao.UserDao">
+    <!--    id配置对应的类    resultType配置对应的返回值类型-->
+    <select id="getUserList" resultType="com.study.pojo.User">
+        select * from  mybatis.user;
+    </select>
+</mapper>
