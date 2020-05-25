@@ -16,6 +16,9 @@
         <module>MyBatis-03</module>
         <module>Test</module>
         <module>MyBatis-04</module>
+        <module>MyBatis-05</module>
+        <module>MyBatis-06</module>
+        <module>MyBatis-07</module>
     </modules>
 
     <!--导入依赖-->
