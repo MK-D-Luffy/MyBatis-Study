@@ -1,11 +1,21 @@
 package com.study.dao;
 
 import com.study.pojo.Blog;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
 
+
+import java.util.List;
+import java.util.Map;
+@SuppressWarnings("All")
 public interface BlogMapper {
-    @Insert("insert into blog (id, title, author, create_time, views) " +
-            "values (#{id}, #{title}, #{author}, #{createTime}, #{views});")
-    int addBlog(Blog blog);
+
+    Integer addBlog(Blog blog);
+
+    List<Blog> queryBlogIf(Map map);
+
+    List<Blog> queryBlogChoose(Map map);
+
+    Integer updateBlog(Map map);
+
+    List<Blog> queryBlogForeach(Map map);
+
 }

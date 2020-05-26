@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--核心配置文件-->
+<configuration>
+
+    <!--读取配置文件的方式配置环境-->
+    <properties resource="db.properties">
+        <property name="username" value="root"/>
+        <property name="password" value="sfz200108"/>
+    </properties>
+
+    <!--标准的日志工厂实现-->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+
+    <!--给实体类起别名，可以使调用时更加方便-->
+    <typeAliases>
+        <!--方式一：通过指定包名设置别名-->
+        <typeAlias type="com.study.pojo.User" alias="User"/>
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+
+    <mappers>
+        <mapper class="com.study.dao.UserMapper"/>
+    </mappers>
+
+</configuration>
